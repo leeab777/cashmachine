@@ -1,0 +1,299 @@
+body{
+    height: 100vh;    /*full height of view screen*/
+    margin: 0;           /*remove default margin*/
+    background: linear-gradient(to bottom right, #838282 10%, #d6cfcf 60%, #e0d7d7 80%);
+
+    position: relative;    /*necessary for positioning the overlay*/
+    overflow: hidden;
+}
+
+.background {
+    height: 100%;
+    background: linear-gradient(to bottom right, #838282 10%, #d6cfcf 60%, #e0d7d7 80%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;   /*keep background behind*/
+}
+
+body::before {
+    content: "" ;/*required for the pseudo-element */
+    position: absolute; /*position relative to the body*/
+    bottom: 0;   /*start at the bottom*/
+    left: 0;    /*start at the left*/
+    width: 100%;     /*full width*/
+    height: 100%;    /*full height*/
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));   /*fading overlay*/
+    pointer-events: none;    /*allows clicking through the overlay*/
+    z-index: 2;
+}
+
+.rectangle {
+    position: relative;    
+    top: 6%;       
+    left: 50%;       
+    transform: translateX(-50%);   
+    width: 60%;       
+    height: 60%;      
+    border: 1px solid transparent; /* Set border thickness */
+    border-radius: 10px; /* Optional */
+    background-clip: padding-box; /* Ensure background does not extend into the border */
+    box-shadow: -15px -15px 50px rgba(0, 0, 0, 0.3),
+                          1px 1px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom right, #6e6e6e 10%, #d6cfcf 60%, #cccaca 90%);     /*use similar for buttons for metalic look*/
+    z-index: 3;    /*screen should be above*/
+}
+
+.line1{
+    position: absolute;
+    top: 6%;
+    left: 19%;
+    width: 150%;
+    height: 2px;
+    background-color: rgba(86, 87, 87, 0.8);
+    transform-origin: top left;
+    transform: rotate(200deg);
+    z-index: 2;     /*keeps liness above the rectangle*/
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.9),       /*for a 3d effect*/
+                         0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+.line2{
+    position: absolute;
+    top: 6%;
+    right: 19%;
+    width: 150%;
+    height: 2px;
+    background-color: #979797;
+    transform-origin: top right;
+    transform: rotate(160deg);
+    z-index: 2;
+    box-shadow: 15px 1px 12px rgba(0, 0, 0, 0.9),
+                          15px 10px 15px rgba(0, 0, 0, 0.8);
+}
+
+.line3{
+    position: absolute;
+    bottom: 33%;
+    left: 19%;
+    width: 150%;
+    height: 2px;
+    background-color: #8d8d8d;
+    transform-origin: bottom left;
+    transform: rotate(142deg);
+    z-index: 2;
+    box-shadow: -5px 4px 15px rgba(0, 0, 0, 0.9),
+                          -5px 10px 35px rgba(0, 0, 0, 0.6);
+}
+
+.line4{
+    position: absolute;
+    bottom: 33%;
+    right: 19%;
+    width: 150%;
+    height: 2px;
+    background-color: #cccaca;
+    transform-origin: bottom right;
+    transform: rotate(218deg);
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2),
+                          0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.screen{
+    position: absolute;
+    top: 50%;                                    /*poition in the center vertically*/
+    right: 38%;                                  /*position from the right*/
+    width: 52%;                                /*to adjust as needed*/
+    height: 77%;                               /*to adjust as needed*/
+    background-color: black;      /*black screen may lighten*/
+    border-radius: 80px;                    /*rounded corners*/
+    transform: translateY(-50%);      /*center vertically*/
+    box-shadow: inset -5px -5px 20px rgba(109, 101, 101, 0.3),    /*inner shadow for 3d effect on screen*/
+                          inset 5px 5px 20px rgba(170, 160, 160, 0.9);
+    z-index: 3;                                  /*ensure screen is above rectangle*/
+}
+
+.curved-line{
+    position: absolute;
+    bottom: 12%;
+    right: 28%;
+    width: 8vw;
+    height: 6vh;
+    background: transparent;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border: 2px solid rgba(243, 10, 10, 0.5);
+    transform-origin: bottom right;
+    transform: rotate(135deg);
+    z-index: 7;
+    overflow: hidden;
+}
+
+.sun-orb{
+    position: absolute;
+    top: 85%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    background-color: rgb(12, 11, 11);
+    border-radius: 80%;
+    box-shadow: 0 0  35px rgba(182, 165, 165, 0.6),
+                          0 0 60px rgba(230, 224, 224, 0.1);
+    z-index: 8;                        
+}
+
+.cardslot{
+    position: absolute;
+    top: 25%;
+    left: 66%;
+    width: 10%;
+    height: 5px;
+    background-color:rgb(12, 11, 11);
+    z-index: 5;
+}
+
+.cardsuround{
+    position: absolute;
+    top: 22%;
+    left: 64%;
+    width: 14%;
+    height: 39px;
+    background-color: #504848;
+    border-radius: 10px;
+    box-shadow: inset 5px 4px  rgba(139, 130, 130, 0.9);
+    z-index: 3;
+}
+
+.fingerspace{
+    position: absolute;
+    top: 23%;
+    left: 69.75%;
+    width: 2.5%;
+    height: 5%;
+    background-color: #383738;
+    border-radius: 50px;
+    box-shadow: inset 3px 3px 6px rgba(5, 5, 5, 0.3),
+                         inset -3px -3px 6px rgba(116, 108, 108, 0.9);
+    z-index: 4;
+}
+
+.trapezoid-container {         /*trapezoid container for keypad*/
+    position: absolute;
+    bottom: 10%;                    /*adjust as needed*/
+    left: 5%;                           /*adjust as needed*/
+    width: 70%;                       /*adjust as needed*/
+    height: 20%;                      /*adjust as needed*/
+    background-color: #333;
+    clip-path: polygon(10%100%, 30% 0%, 70% 0%, 90% 100%);
+    display: flex;
+   flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px;
+    box-sizing: border-box;
+    z-index: 4;
+}
+
+.button {
+    position: absolute;
+    width: 33%;
+    height: 20%;
+    background-color: #ddd;
+    border:none;
+    border-radius: 2px;
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.button:nth-child(1) {
+    top: 0%;
+    left: 0%;
+    transform: translateX(0%) translateY(0%) skewX(-25deg);
+}
+
+.button:nth-child(2) {
+    top: 0%;
+    left: 33%;
+    transform: translateX(0%) translateY(0%) skewX(-15deg);
+}
+
+.button:nth-child(3) {
+    top: 0%;
+    left: 66%;
+    transform: translateX(0%) translateY(0%) skewX(-15deg);
+}
+
+.button:nth-child(4) {
+    top:25%;
+    left: 0%;
+    transform: translateX(0%) translateY(0%) skewX(-25deg)
+}
+
+.button:nth-child(5) {
+    top:25%;
+    left:33%;
+    transform: translateX(0%) translateY(0%) skewX(-15deg);
+}
+
+.button:nth-child(6) {
+    top:25%;
+    left: 66%;
+    transform: translateX(0%) translateY(0%) skewX(-15deg);
+}
+
+.button:nth-child(7) {
+    top: 50%;
+    left: 0%;
+    transform: translateX(0%) translateY(0%) skewX(-25deg);
+}
+
+.button:nth-child(8) {
+    top:50%;
+    left: 33%;
+    transform: translateX(0%) translateY(0%) skewX(-15deg);
+}
+
+.button:nth-child(9) {
+    top:50%;
+    left: 66%;
+    transform: translateX(0%) translateY(0%) skewX(-15deg);
+}
+
+.button:nth-child(10) {
+    top: 75%;
+    left:0%;
+    transform: translateX(0%) translateY(0%) skewX(-25deg);
+}
+
+.button:nth-child(11) {
+    top: 75%;
+    left: 33%;
+    transform: translateX(0%) translateY(0%) skewX(-15deg);
+}
+
+button:nth-child(12) {
+    top: 75%;
+    left: 66%;
+    transform: translateX(0%) translateY(0%) skewX(-15deg);
+}
+
+.button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+

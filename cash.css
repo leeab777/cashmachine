@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;     /*light background for contrast*/
+}
+
+.rectangle {
+    position: relative;
+    width: 800px;
+    height: 400px;
+    background-color: #b0cad1;    /*rectangle colour*/
+    border: 2px solid #b2bcbd;     /*border colour*/
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);   /*shadow for depth*/
+}
+
+.line {
+    position: absolute;
+    background-color: #b2bcdb;  /*line colour*/
+}

@@ -1,0 +1,29 @@
+body{
+    height: 100vh;    /*full height of veiw screen*/
+    margin: 0;           /*remove default margin*/
+    background: linear-gradient(to bottom right, #838282 10%, #d6cfcf 60%, #e0d7d7 80%);
+    position: relative;    /*necessary for positioning the overlay*/
+}
+
+body::before {
+    content: "" ;/*required for the pseudo-element */
+    position: absolute; /*position relative to the body*/
+    bottom: 0;   /*start at the bottom*/
+    left: 0;    /*start at the left*/
+    width: 100%;     /*full width*/
+    height: 100%;    /*full height*/
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));   /*fading overlay*/
+    pointer-events: none;    /*allows clicking through the overlay*/
+}
+
+.rectangle {
+    position: absolute;    
+    top: 6%;       /*adjust as needed*/
+    left: 50%;       /*center horizontally*/
+    transform: translateX(-50%);   /*adjust for centering*/
+    width: 60%;       /*width to adjust to percent*/
+    height: 60%;      /*height to adjust to percent*/
+    border: 2px solid rgba(116, 115, 115, 0.8);      /*border color to adjust and thickness of border*/
+   
+}
+

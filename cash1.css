@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: relative;
+}
+
+.background {
+    background-color: rgb(190, 202, 202);
+    position: relative;
+    width: 100%;
+    height:100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom left, rgba(138, 125, 125, 0.5) rgb(138, 125, 125, 0));
+    pointer-events: none;
+}
+.rectangle {
+    position: relative;
+    width: 750px;
+    height: 420px;
+    background-color: #007BFF; /* Rectangle color */
+    border: 2px solid #0056b3; /* Border color */
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    margin-bottom: 150px;
+    z-index: 1;
+}
+
+
+
+.line {
+    position: absolute;
+    background-color: #0056b3; /* Line color */
+}
+
+.line1 {
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: rotate(200deg);
+    transform-origin: top left;
+    z-index: 2;  /*keeps lines above the rectangle*/
+}
+
+.line2 {
+    top: 0; 
+    right: 0;
+    width: 100%;
+    height: 2px;
+    transform: rotate(160deg);
+    transform-origin: top right;
+    z-index: 2;
+}
+
+.line3 {
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: rotate(140deg);
+    transform-origin: bottom left;
+}
+
+.line4 {
+    bottom: 0; 
+    right: 0;
+    width: 100%;
+    height: 2px;
+    transform: rotate(220deg);
+    transform-origin: bottom right;
+}
+
+
+.line1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: rotate(200deg);
+    transform-origin: top left;
+    color: rgba(19, 18, 18, 0.8);
+    z-index: 2;     /*keeps liness above the rectangle*/
+}
+
+.line2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    transform: rotate(160deg);
+    transform-origin: top right;
+    color:#6e6e6e;
+    Z-index: 2;
+}
+
+.line3{
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: rotate(140deg);
+    transform-origin: bottom left;
+    color:#838282;
+    z-index: 2;
+}
+
+.line4{
+    position: absolute;
+    bottom: 0; 
+    right: 0;
+    width: 100%;
+    height: 2px;
+    transform: rotate(220deg);
+    transform-origin: bottom right;
+    color: #838282;
+    z-index: 2;
+}
+
+  

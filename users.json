@@ -1,0 +1,12 @@
+{
+  "user1": {
+    "pin": "1234",
+    "balance": 955,
+    "transactions": []
+  },
+  "user2": {
+    "pin": "5678",
+    "balance": 2020,
+    "transactions": []
+  }
+}
